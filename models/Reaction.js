@@ -13,7 +13,7 @@ const reactionSchema = new Schema(
     },
     username: {
         type: String,
-        required: true 
+        required: "Username is required" 
     },
     createdAt: {
         type: Date,
