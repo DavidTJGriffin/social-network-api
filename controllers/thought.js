@@ -24,7 +24,7 @@ const thoughtController = {
 				);
 			})
 			.then(dbUserData => {
-				res.json(dbUserData);
+				res.json({message: 'Thought successfully added!'});
 			})
 	},
 
