@@ -38,6 +38,9 @@ const userController = {
 			.then(dbUserData => {
 				return Promise.all(dbUserData.thoughts.map(thought => Thought.findOneAndDelete({ _id: thought.toString() })));
 			})
+			.then(([dbUserData]) => {
+				res.json({message: 'User deleted successfully'});
+			})
 			
 	},
 	
@@ -52,6 +55,10 @@ const userController = {
 				{ $push: { friends: params.id } }
 			)
 		])
+		.then(([dbUserData, dbFriendData]) => {
+			res.json({message: 'Added friend successfully'});
+		})
+		
 	},
 };
 

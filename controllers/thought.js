@@ -24,7 +24,7 @@ const thoughtController = {
 				);
 			})
 			.then(dbUserData => {
-				res.json({message: 'Thought successfully added!'});
+				res.json({message: 'Thought created successfully'});
 			})
 	},
 
@@ -38,8 +38,9 @@ const thoughtController = {
 	deleteThought({ params }, res) {
 		Thought.findOneAndDelete({ _id: params.id })
 			.then(dbThoughtData => {
-				res.json(dbThoughtData);
+				res.json({message: 'Thought deleted successfully'});
 			})
+			
 	},
 	
 	addReaction({ params, body }, res) {
@@ -51,6 +52,8 @@ const thoughtController = {
 				res.json(dbThoughtData);
 			})
 	},
+
+	
 };
 
 module.exports = thoughtController;

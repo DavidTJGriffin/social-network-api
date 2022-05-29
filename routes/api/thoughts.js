@@ -24,7 +24,7 @@ router
 
 // /api/users/:user-id/friends/:friend-id
 router
-    .route('/:thought-id/reactions/:reaction-id')
+    .route('/:id/reactions')
     .post(addReaction);
 
 
